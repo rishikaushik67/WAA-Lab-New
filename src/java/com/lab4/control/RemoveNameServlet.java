@@ -61,7 +61,7 @@ public class RemoveNameServlet extends HttpServlet {
                
         HttpSession session=request.getSession(true);
         session.removeAttribute(request.getParameter("key"));
-        response.sendRedirect("names.html");
+        response.sendRedirect("names.jsp");
     }
 
     /**

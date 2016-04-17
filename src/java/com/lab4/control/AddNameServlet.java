@@ -64,18 +64,21 @@ public class AddNameServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession(true); //rishi
+
+        HttpSession session = request.getSession(true); // rishi
+    // rishi 123
+
         Person person=new Person();
         person.setKey(request.getParameter("key"));
-        person.setKey(request.getParameter("fname"));
-        person.setKey(request.getParameter("lname"));
+        person.setFirstName(request.getParameter("fname"));
+        person.setLastName(request.getParameter("lname"));
           
         addNames.add(person);
         
         if (!request.getParameter("key").isEmpty()) {
             session.setAttribute(request.getParameter("key"), addNames);
         }
-        response.sendRedirect("names.html");
+        response.sendRedirect("names.jsp");
     }
 
     /**
