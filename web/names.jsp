@@ -14,6 +14,7 @@
     <body>
         <h1>Hello World!</h1>
         
+        
          <form action="AllNameServlet" method="GET">
             <input type="submit" value="show all"/> 
         </form>
