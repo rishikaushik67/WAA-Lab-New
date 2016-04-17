@@ -64,7 +64,7 @@ public class AddNameServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(true); //rishi
         Person person=new Person();
         person.setKey(request.getParameter("key"));
         person.setKey(request.getParameter("fname"));
