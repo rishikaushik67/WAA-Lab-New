@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,12 +73,12 @@ public class AllNameServlet extends HttpServlet {
             Enumeration mySession = session.getAttributeNames();
             while (mySession.hasMoreElements()) {
                 String mySessionVarName = (String) mySession.nextElement();
-                List<Person> person = (List<Person>) session.getAttribute(mySessionVarName);
-                out.println("Key = " + mySessionVarName + " First Name= " + person.get(0).getFirstName() +
-                        " Second Name = " + person.get(0).getLastName() + "<br>" + "<br>");
+                List<Person> persons = (List<Person>) session.getAttribute(mySessionVarName);
+                out.println("Key = " + mySessionVarName + " First Name= " + persons.get(0).getFirstName() +
+                        " Second Name = " + persons.get(0).getLastName() + "<br>" + "<br>");
             }
 
-            RequestDispatcher view = request.getRequestDispatcher("names.html");
+            RequestDispatcher view = request.getRequestDispatcher("names.jsp");
             view.include(request, response);
 
         }
@@ -105,6 +106,7 @@ public class AllNameServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
+        
     }// </editor-fold>
 
 }
