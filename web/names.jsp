@@ -18,7 +18,6 @@
             <input type="submit" value="show all"/> 
         </form>
         &nbsp;
-        
         <form action="AddNameServlet" method="GET">
              Key = <input type="text" name="key"/>
              First Name = <input type="text" name="fname"/>
