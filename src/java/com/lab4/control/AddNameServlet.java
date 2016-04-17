@@ -67,15 +67,15 @@ public class AddNameServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         Person person=new Person();
         person.setKey(request.getParameter("key"));
-        person.setKey(request.getParameter("fname"));
-        person.setKey(request.getParameter("lname"));
+        person.setFirstName(request.getParameter("fname"));
+        person.setLastName(request.getParameter("lname"));
           
         addNames.add(person);
         
         if (!request.getParameter("key").isEmpty()) {
             session.setAttribute(request.getParameter("key"), addNames);
         }
-        response.sendRedirect("names.html");
+        response.sendRedirect("names.jsp");
     }
 
     /**
