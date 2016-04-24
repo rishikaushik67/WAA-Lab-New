@@ -16,6 +16,7 @@
         
         
          <form action="AllNameServlet" method="GET">
+          <form action="AllNameServlet" method="GET">
             <input type="submit" value="show all"/> 
         </form>
         &nbsp;
